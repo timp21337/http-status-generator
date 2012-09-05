@@ -8,7 +8,7 @@ public class HttpStatusTest extends TestCase {
     assertEquals("<html><head><title>Htpp Status Generator</title>\n"
         + "</head>\n" + "<body><h1>Htpp Status Generator</h1>\n"
         + "<form>Status <input value=\"200\" name=\"status\" /></form>\n"
-        + "</body>\n" + "</html>\n", new HttpStatus().getPage());
+        + "</body>\n" + "</html>\n", new HttpStatus().getPage("200"));
   }
 
 }
