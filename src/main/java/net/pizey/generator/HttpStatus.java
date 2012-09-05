@@ -28,9 +28,9 @@ public class HttpStatus extends HttpServlet {
   String getPage(String status) {
     return wrap("html",
       wrap("head", 
-        wrap("title", "Htpp Status Generator"))
+        wrap("title", "Http Status Generator"))
     + wrap("body",
-        wrap("h1", "Htpp Status Generator")
+        wrap("h1", "Http Status Generator")
       + wrap("form", "Status <input value=\"" + status + "\" size=\"5\" name=\"status\" />")
       + wrap("p", "<a href='https://github.com/timp21337/http-status-generator'>github</a>")
       ));
