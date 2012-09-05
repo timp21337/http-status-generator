@@ -18,23 +18,20 @@ public class HttpStatus extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     String q = request.getParameter("status");
-    if (q != null) {
-      response.setStatus(Integer.parseInt(q));
-    }
+    if (q == null) q = "200";
+    response.setStatus(Integer.parseInt(q));
     response.setContentType("text/html");
     PrintWriter w = response.getWriter();
-    w.write(
-      getPage()
-        );
+    w.write(getPage(q));
   }
 
-  String getPage() {
+  String getPage(String status) {
     return wrap("html",
       wrap("head", 
         wrap("title", "Htpp Status Generator"))
     + wrap("body",
         wrap("h1", "Htpp Status Generator")
-      + wrap("form", "Status <input value=\"200\" name=\"status\" />")));
+      + wrap("form", "Status <input value=\"" + status + "\" width=\"5\" name=\"status\" />")));
   }
 
   private String wrap(String tag, String content) { 
