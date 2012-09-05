@@ -31,7 +31,9 @@ public class HttpStatus extends HttpServlet {
         wrap("title", "Htpp Status Generator"))
     + wrap("body",
         wrap("h1", "Htpp Status Generator")
-      + wrap("form", "Status <input value=\"" + status + "\" width=\"5\" name=\"status\" />")));
+      + wrap("form", "Status <input value=\"" + status + "\" width=\"5\" name=\"status\" />")
+      + wrap("p", "<a href='https://github.com/timp21337/http-status-generator'>github</a>")
+      ));
   }
 
   private String wrap(String tag, String content) { 
